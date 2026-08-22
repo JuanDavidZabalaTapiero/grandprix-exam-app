@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<!-- var -->
+{% set title = "Categorías" %}
+
+<!-- body -->
+{% block body %}
+<section>
+  <h1>Categorías</h1>
+
+  <a href="{{url_for('license_categories.create')}}">Registrar</a>
+
+  <article
+    id="categories"
+    data-update-url="{{url_for('license_categories.update', category_id=0)}}"
+  ></article>
+</section>
+{% endblock %}
+
+<!-- scripts -->
+{% block scripts %}
+<script
+  type="module"
+  src="{{url_for('static', filename='js/license_category/index.js')}}"
+></script>
+{% endblock %}

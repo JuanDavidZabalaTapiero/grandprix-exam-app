@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+<!-- var -->
+{% set title = "Registrar Categoría" %}
+
+<!-- body -->
+{% block body %}
+<section>
+  <a href="{{url_for('license_categories.list')}}">Volver</a>
+
+  <h1>Registrar Categoría</h1>
+
+  <form method="post" novalidate>
+    {{form.hidden_tag()}}
+
+    <div>
+      {{form.name.label}}
+
+      <!-- input -->
+      {{form.name()}}
+
+      <!-- errors -->
+      {% if form.name.errors %}
+      <ul>
+        {% for error in form.name.errors %}
+        <li>{{error}}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+
+    {{form.submit()}}
+  </form>
+</section>
+{% endblock %}
