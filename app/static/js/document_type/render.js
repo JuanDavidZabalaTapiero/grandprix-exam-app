@@ -1,24 +1,24 @@
 import { icons } from "../icons.js";
-import { handleDeleteCategory } from "./controller.js";
+import { handleDeleteDocumentType } from "./controller.js";
 
-export function renderCategories(container, categories) {
+export function renderDocumentTypes(container, documentTypes) {
   container.innerHTML = "";
 
-  if (categories.length === 0) {
-    container.textContent = "No hay categorías registradas.";
+  if (documentTypes.length === 0) {
+    container.textContent = "No hay tipos de documento registrados.";
     return;
   }
 
   // datasets
   const updateUrl = container.dataset.updateUrl;
 
-  categories.forEach((category) => {
+  documentTypes.forEach((docType) => {
     const element = document.createElement("div");
-    element.textContent = category.name;
+    element.textContent = docType.name;
 
     // edit
     const link = document.createElement("a");
-    link.href = updateUrl.replace("0", category.id);
+    link.href = updateUrl.replace("0", docType.id);
     link.innerHTML = icons.pencil;
 
     // delete
@@ -26,7 +26,7 @@ export function renderCategories(container, categories) {
     button.innerHTML = icons.trash;
 
     button.addEventListener("click", () => {
-      handleDeleteCategory(category.id);
+      handleDeleteDocumentType(docType.id);
     });
 
     element.appendChild(link);

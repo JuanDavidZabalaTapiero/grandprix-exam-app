@@ -11,12 +11,12 @@ class LicenseCategoryNotFound(LicenseCategoryError):
 
 
 class LicenseCategoryAlreadyExists(LicenseCategoryError):
-    default_message = "La categoría {name} ya está registrada."
+    default_message = "La categoría '{name}' ya está registrada."
     status_code = 409
 
 
 class LicenseCategoryInUse(LicenseCategoryError):
     default_message = (
-        "La categoría {name} tiene matrículas vinculadas y no puede eliminarse."
+        "La categoría '{name}' tiene matrículas vinculadas y no puede eliminarse."
     )
     status_code = 409

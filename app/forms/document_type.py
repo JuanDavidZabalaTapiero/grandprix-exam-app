@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Length
 from .normalizers import normalize_text
 
 
-class LicenseCategoryForm(FlaskForm):
+class DocumentTypeForm(FlaskForm):
     name = StringField(
         label="Nombre",
         validators=[

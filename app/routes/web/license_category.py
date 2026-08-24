@@ -25,7 +25,7 @@ def create():
         try:
             LicenseCategoryService.create(name)
             flash("Categoría registrada correctamente.", "success")
-            return redirect(url_for("license_categories.create"))
+            return redirect(url_for("license_categories.list"))
         except AppError as e:
             flash(str(e), "danger")
 

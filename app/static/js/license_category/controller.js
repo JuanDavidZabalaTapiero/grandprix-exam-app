@@ -3,10 +3,11 @@ import { getCategories, deleteCategory } from "./api.js";
 import { renderCategories } from "./render.js";
 
 export async function loadCategories() {
+  const container = document.getElementById("categories");
+
   try {
     const categories = await getCategories();
-
-    renderCategories(categories);
+    renderCategories(container, categories);
   } catch (error) {
     showMessage(error.message, "danger");
   }

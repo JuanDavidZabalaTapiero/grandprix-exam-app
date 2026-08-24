@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+<!-- var -->
+{% set title = "Tipos de Documento" %}
+
+<!-- body -->
+{% block body %}
+<section>
+  <h1>Tipos de Documento</h1>
+
+  <a href="{{url_for('document_types.create')}}">Registrar</a>
+
+  <article
+    id="document-types"
+    data-update-url="{{url_for('document_types.update', document_type_id=0)}}"
+  ></article>
+</section>
+{% endblock %}
+
+<!-- scripts -->
+{% block scripts %}
+<script
+  type="module"
+  src="{{url_for('static', filename='js/document_type/index.js')}}"
+></script>
+{% endblock %}

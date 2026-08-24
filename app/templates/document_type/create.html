@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 
 <!-- var -->
-{% set title = "Editar Categoría" %}
+{% set title = "Registrar Tipo de Documento" %}
 
 <!-- body -->
 {% block body %}
 <section>
-  <a href="{{url_for('license_categories.list')}}">Volver</a>
+  <a href="{{url_for('document_types.list')}}">Volver</a>
 
-  <h1>Editar Categoría</h1>
+  <h1>Registrar Tipo de Documento</h1>
 
   <form method="post" novalidate>
     {{form.hidden_tag()}}
@@ -29,7 +29,7 @@
       {% endif %}
     </div>
 
-    <button type="submit">Actualizar</button>
+    <button type="submit">Registrar</button>
   </form>
 </section>
 {% endblock %}
