@@ -1,6 +1,10 @@
-# Aplicación Examen
+# Flask Architecture Lab
 
-Aplicación web desarrollada en Python con Flask para la gestión y realización de exámenes de conducción y competencias.
+Proyecto experimental desarrollado en Python con Flask para practicar y explorar una arquitectura por capas, separando responsabilidades entre repositorios, servicios, rutas, APIs y la capa de presentación.
+
+La aplicación utiliza la siguiente estructura: **Repository → Service → Route / API → JavaScript → HTML**
+
+El objetivo principal del proyecto es experimentar con esta arquitectura y evaluar cómo organizar una aplicación Flask de forma clara, modular y mantenible.
 
 ---
 
