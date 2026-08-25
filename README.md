@@ -25,7 +25,6 @@ El proyecto sigue una **Arquitectura en Capas (Layered Architecture)** con separ
 3. **Servicios (`app/services`):** Encapsulan la lógica de negocio. Coordinan las transacciones de base de datos (`commit`) y aplican el decorador de manejo global de excepciones `@handle_exceptions`.
 4. **Repositorios (`app/repositories`):** Realizan consultas a la base de datos utilizando el ORM SQLAlchemy sin confirmar transacciones explícitamente (`commit`).
 5. **Modelos (`app/database/models.py`):** Entidades de base de datos (`Student`, `Enrollment`, `LicenseCategory`, `Question`, `Option`, `Competence`, `Response`, etc.).
-6. **Manejo de Errores y Excepciones (`app/core` y `app/exceptions`):** Clases personalizadas de error (`AppError`, `DatabaseError`) interceptadas globalmente.
 
 ---
 
@@ -210,10 +209,3 @@ pytest
 ```bash
 docker exec -it contenedor-flask python -m pytest
 ```
-
----
-
-## 📌 Convenciones y Reglas del Proyecto
-
-- **Transacciones de Base de Datos:** El repositorio de cada modelo solo interactúa con la sesión sin hacer `commit`. La confirmación (`db.session.commit()`) la gestiona la capa de servicio.
-- **Manejo de Excepciones:** Todo método de la capa de servicios debe usar el decorador `@handle_exceptions` de `app.core.decorators`. Este decorador realiza `rollback()` automático ante fallos y encapsula errores de base de datos (`SQLAlchemyError`) dentro de `DatabaseError`.

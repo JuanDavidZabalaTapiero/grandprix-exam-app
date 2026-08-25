@@ -9,7 +9,7 @@ export function renderCategories(container, categories) {
     return;
   }
 
-  // datasets
+  // dataset
   const updateUrl = container.dataset.updateUrl;
 
   categories.forEach((category) => {

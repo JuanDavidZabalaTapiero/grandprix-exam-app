@@ -3,32 +3,19 @@ from sqlalchemy import select
 from app.database.models import DocumentType, Student
 from app.extensions import db
 
+from .base import BaseRepository
 
-class DocumentTypeRepository:
-    @staticmethod
-    def create(name):
-        document_type = DocumentType(name=name)
-        db.session.add(document_type)
-        return document_type
 
-    @staticmethod
-    def get_by_id(id):
-        return db.session.get(DocumentType, id)
+class DocumentTypeRepository(BaseRepository):
+    def __init__(self):
+        super().__init__(DocumentType)
 
-    @staticmethod
-    def get_by_name(name):
+    def get_by_name(self, name):
         return db.session.execute(
             select(DocumentType).where(DocumentType.name == name)
         ).scalar_one_or_none()
 
-    @staticmethod
-    def get_all():
-        return db.session.scalars(
-            select(DocumentType).order_by(DocumentType.name)
-        ).all()
-
-    @staticmethod
-    def is_in_use(document_type_id):
+    def is_in_use(self, document_type_id):
         return (
             db.session.execute(
                 select(Student.id)
@@ -38,11 +25,5 @@ class DocumentTypeRepository:
             is not None
         )
 
-    @staticmethod
-    def update(document_type, name):
-        document_type.name = name
-        return document_type
 
-    @staticmethod
-    def delete(document_type):
-        db.session.delete(document_type)
+document_type_repository = DocumentTypeRepository()

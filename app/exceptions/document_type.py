@@ -6,7 +6,7 @@ class DocumentTypeError(AppError):
 
 
 class DocumentTypeNotFound(DocumentTypeError):
-    default_message = "El tipo de documento con id {document_type_id} no existe."
+    default_message = "El tipo de documento con id {id} no existe."
     status_code = 404
 
 

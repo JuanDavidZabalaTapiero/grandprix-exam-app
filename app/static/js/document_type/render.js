@@ -9,7 +9,7 @@ export function renderDocumentTypes(container, documentTypes) {
     return;
   }
 
-  // datasets
+  // dataset
   const updateUrl = container.dataset.updateUrl;
 
   documentTypes.forEach((docType) => {

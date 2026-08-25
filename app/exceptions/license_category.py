@@ -6,7 +6,7 @@ class LicenseCategoryError(AppError):
 
 
 class LicenseCategoryNotFound(LicenseCategoryError):
-    default_message = "La categoría con id {category_id} no existe."
+    default_message = "La categoría con id {id} no existe."
     status_code = 404
 
 
