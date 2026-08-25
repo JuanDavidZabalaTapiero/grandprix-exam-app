@@ -5,31 +5,30 @@
 
 <!-- body -->
 {% block body %}
-<section>
-  <a href="{{url_for('document_types.list')}}">Volver</a>
+<a href="{{url_for('document_types.list')}}" class="back-btn">← Volver</a>
 
+<section>
   <h1>Registrar Tipo de Documento</h1>
 
   <form method="post" novalidate>
     {{form.hidden_tag()}}
 
-    <div>
-      {{form.name.label}}
+    <!-- label -->
+    {{form.name.label}}
 
-      <!-- input -->
-      {{form.name()}}
+    <!-- input -->
+    {{form.name()}}
 
-      <!-- errors -->
-      {% if form.name.errors %}
-      <ul>
-        {% for error in form.name.errors %}
-        <li>{{error}}</li>
-        {% endfor %}
-      </ul>
-      {% endif %}
-    </div>
+    <!-- errors -->
+    {% if form.name.errors %}
+    <ul>
+      {% for error in form.name.errors %}
+      <li>{{error}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
 
-    <button type="submit">Registrar</button>
+    <button type="submit" class="submit-btn">Registrar</button>
   </form>
 </section>
 {% endblock %}

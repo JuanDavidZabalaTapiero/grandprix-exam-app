@@ -46,7 +46,7 @@ class DocumentTypeService:
         if existing_document_type and existing_document_type.id != document_type_id:
             raise DocumentTypeAlreadyExists(name=name)
 
-        document_type_repository.update(document_type, name)
+        document_type_repository.update(document_type, name=name)
         db.session.commit()
         return document_type
 

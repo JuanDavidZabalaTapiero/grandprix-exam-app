@@ -4,44 +4,227 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
   font-family: "Poppins", sans-serif;
+  background-color: #f1f5f9;
+  color: #1e293b;
 }
 
 header {
-  background-color: gray;
-  padding: 20px;
+  background-color: #ffffff;
+  padding: 20px 40px;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  a {
+    color: #64748b;
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+
+  a:hover {
+    color: #2563eb;
+  }
 }
 
 main {
-  padding: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 section {
-  background-color: lightgray;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+}
+
+article {
+  background-color: #f8fafc;
   padding: 20px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+}
+
+a {
+  text-decoration: none;
 }
 
 li {
   list-style: none;
 }
 
+/* Mensajes */
+
 .message {
-  background-color: gray;
-  color: white;
+  background-color: #475569;
+  color: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
+  font-weight: 500;
 }
 
 .success {
-  background-color: green;
+  background-color: #16a34a;
 }
 
 .danger {
-  background-color: red;
+  background-color: #dc2626;
+}
+
+/* Añadir nuevo registro */
+
+.add-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Elementos */
+
+.element {
+  background-color: #334155;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px;
+  color: #f8fafc;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.actions {
+  display: flex;
+  gap: 20px;
+}
+
+/* Editar */
+
+.edit-btn {
+  background-color: #dbeafe;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  color: #2563eb;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.edit-btn:hover {
+  background-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+/* Eliminar */
+
+.delete-btn {
+  background-color: #fee2e2;
+  border: none;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  color: #dc2626;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.delete-btn:hover {
+  background-color: #fecaca;
+  color: #b91c1c;
+}
+
+/* Formulario */
+
+.back-btn {
+  background-color: #334155;
+  color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+  align-self: flex-start;
+}
+
+.back-btn:hover {
+  background-color: #1e293b;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  background-color: #ffffff;
+  font-family: inherit;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+.submit-btn {
+  background-color: #2563eb;
+  color: #ffffff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  nav {
+    flex-direction: row;
+  }
 }

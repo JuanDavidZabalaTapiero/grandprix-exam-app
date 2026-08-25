@@ -46,7 +46,7 @@ class LicenseCategoryService:
         if existing_category and existing_category.id != category_id:
             raise LicenseCategoryAlreadyExists(name=name)
 
-        license_category_repository.update(category, name)
+        license_category_repository.update(category, name=name)
         db.session.commit()
         return category
 
